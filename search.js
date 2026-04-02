@@ -1,8 +1,15 @@
-// creation  inpute de search  par mode hiden sur logo de search 
+import { afficherGames } from "./UI";
 
-const search =document.getElementById("search")
-function search(){
+const input = document.getElementById("search");
 
 
-    
-}
+ export function SearchInput(){
+input.addEventListener("input", () => {
+const value = input.value.toLowerCase();
+
+const result = games.filter(game =>
+   game.title.toLowerCase().includes(value)
+  );
+});}
+
+afficherGames(result)
