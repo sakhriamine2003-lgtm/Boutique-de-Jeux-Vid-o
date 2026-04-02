@@ -1,11 +1,8 @@
-import { games } from "./data.js";
-import { SearchInput } from "./search.js";
-
 
 const container = document.getElementById("cards");
 
 export function afficherGames(list) {
-  container.innerHTML = ""; 
+  container.innerHTML = "";
 
   for (let i = 0; i < list.length; i++) {
     let game = list[i];
@@ -26,29 +23,3 @@ export function afficherGames(list) {
     `;
   }
 }
-
-afficherGames(games);
-SearchInput();         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
