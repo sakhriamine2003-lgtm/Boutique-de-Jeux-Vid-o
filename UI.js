@@ -12,10 +12,12 @@ export function afficherGames(list) {
         class="h-64 rounded-[10px] flex flex-col justify-end w-full md:w-[31%] mx-1"
         style="background-image: url('${game.image}'); background-size: cover; background-position: center;"
       >
+        <button class=" ml-[85%] mb-[34%] bg-gradient-to-r to-orange-100 from-orange-200 to-orange-400  w-10 rounded-[50px] p-1"> <img src="https://cdn-icons-png.flaticon.com/128/4947/4947050.png" alt="acheter"></button>
+
         <div class="bg-[#3C3B3B]/50 flex justify-between items-center text-white font-bold p-4">
-          <h2>${game.category}</h2>
+          <p class="">${game.title}</p>
           <div class="text-right">
-            <p>${game.title}</p>
+            <p>${game.category}</p>
             <p>${game.price} €</p>
           </div>
         </div>

@@ -9,8 +9,6 @@ const value = input.value.toLowerCase();
 
 
 
-
-
 const result = games.filter(game =>
    game.title.toLowerCase().includes(value)
   ); afficherGames(result)
