@@ -2,6 +2,7 @@ import { afficherGames } from "./UI.js";
 const category = document.getElementById("category");
 
 export function Affichercategory() {
+
   category.innerHTML = `
     <div class="flex gap-4 flex-wrap justify-center mt-6">
 
@@ -38,7 +39,7 @@ export function FiltrerCategory(games) {
     else {
       const result = [];
       for (let i = 0; i < games.length; i++) {
-        if (games[i].category.toLowerCase() === categorie.toLowerCase()) {
+        if (games[i].category === categorie) {
           result.push(games[i])
 
         }
