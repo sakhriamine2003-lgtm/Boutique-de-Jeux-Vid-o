@@ -1,22 +1,23 @@
+import { afficherGames } from "./UI.js";
 const category = document.getElementById("category");
 
 export function Affichercategory() {
   category.innerHTML = `
     <div class="flex gap-4 flex-wrap justify-center mt-6">
 
-      <button data-cat="Action" class="px-6 py-2 bg-[#2a2a2a] text-white rounded-full hover:bg-orange-400 transition">
+      <button data-name="Action" class="px-6 py-2 bg-[#2a2a2a] text-white rounded-full hover:bg-orange-400 transition">
         Action
       </button>
 
-      <button data-cat="RPG" class="px-6 py-2 bg-[#2a2a2a] text-white rounded-full hover:bg-orange-500 transition">
+      <button data-name="RPG" class="px-6 py-2 bg-[#2a2a2a] text-white rounded-full hover:bg-orange-500 transition">
         RPG
       </button>
 
-      <button data-cat="FPS" class="px-6 py-2 bg-[#2a2a2a] text-white rounded-full hover:bg-orange-500 transition">
+      <button data-name="FPS" class="px-6 py-2 bg-[#2a2a2a] text-white rounded-full hover:bg-orange-500 transition">
         FPS
       </button>
 
-      <button data-cat="all" class="px-6 py-2 bg-gray-500 text-white rounded-full">
+      <button data-name="all" class="px-6 py-2 bg-gray-500 text-white rounded-full">
         Tous
       </button>
 
@@ -25,24 +26,25 @@ export function Affichercategory() {
 }
 
 
-export function FiltrerLaCatigory(games, afficherGames) {
-  
+export function FiltrerCategory(games) {
+
   category.addEventListener("click", (e) => {
-    if (e.target.tagName === "BUTTON") {
 
-      const categorie = e.target.dataset.cat;
+    const categorie = e.target.dataset.name;
 
-      if (categorie === "all") {
-        afficherGames(games);
-      } else {
-        const result = games.filter(game =>
-          game.category.toLowerCase() === categorie.toLowerCase()
-        );
+    if (categorie === "all") {      
+      afficherGames(games)
+    }
+    else {
+      const result = [];
+      for (let i = 0; i < games.length; i++) {
+        if (games[i].category.toLowerCase() === categorie.toLowerCase()) {
+          result.push(games[i])
 
-        afficherGames(result);
+        }
       }
-
+      afficherGames(result)
+      
     }
   });
-
 }
