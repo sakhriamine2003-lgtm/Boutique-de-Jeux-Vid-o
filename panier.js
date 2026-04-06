@@ -1,12 +1,10 @@
 
-
-
+import { games  } from "./data";
 const panier = document.getElementById("panier")
 
+  function AffichePanier(){
 
-export function AffichePanier(){
-
-    panier.innerHTML = `
+    panier.innerHTML = `<div>
 
 
     <section class="text-white mt-4">
@@ -23,8 +21,8 @@ export function AffichePanier(){
 </div> 
 
 <div class="flex flex-col justify-center gap-6">   
-     <h2>xxxxxxxxxx</h2> 
-     <p>31.69 € </p>
+     <h2>${game.title}</h2> 
+     <p>${game.price}</p>
  </div> 
 
  <div class=" my-auto  mx-4  ">  
@@ -84,6 +82,26 @@ export function AffichePanier(){
 
     </section>
 
-    
+    </div>
     `
 }
+AffichePanier()
+
+
+
+function AjouterPanier(id){
+
+  const game = games.find(g => g.id === id);
+  if (!game) return;
+
+  const item = cart.find(i => i.game.id === id);
+
+  item ? item.qty++ : cart.push({ game, qty: 1 });
+
+  saveCart();
+  updateBadge();
+
+  showToast("jeux ajoute au panier")
+
+}
+
