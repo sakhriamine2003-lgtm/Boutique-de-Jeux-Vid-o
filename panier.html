@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-    <div id="panier" class="bg-[#101010] "> </div>
-    
-    <script src="panier.js"></script>
+<body class="bg-[#101010]">
+
+  <header class="bg-[#3C3B3B] flex items-center justify-between px-6 py-3 shadow-lg">
+    <div class="flex items-center gap-3">
+      <img class="w-10 h-10 object-contain" src="https://cdn-icons-png.flaticon.com/128/8354/8354609.png" alt="Logo">
+      <p class="text-white">INSTANT GAMING</p>
+    </div>
+    <a href="index.html">
+      <p class="text-white">← Retour</p>
+    </a>
+  </header>
+
+  <div id="panier"></div>
+
+  <script type="module" src="affichePanier.js"></script>
 </body>
 </html>
