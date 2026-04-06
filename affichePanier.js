@@ -204,12 +204,10 @@ function SupprimerCard(id) {
   AffichePanier();
 }
 
-
-
 window.quantitiePlus = quantitiePlus;
 window.quantitieMoins = quantitieMoins;
+window.SupprimerCard = SupprimerCard ;
 
 AffichePanier();
 
 
-AffichePanier();
