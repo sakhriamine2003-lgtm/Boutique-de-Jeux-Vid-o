@@ -1,5 +1,5 @@
 const paniertable = document.getElementById("panier");
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+let  cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function sauvegarder() {
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -117,20 +117,18 @@ function quantitieMoins(id) {
   if (!item) return;
   if (item.qty > 1) {
     item.qty--;
-  } else {
-    SupprimerCard(id);
-    return;
-  }
+  } 
+   
   sauvegarder();
   AffichePanier();
 }
 
 function SupprimerCard(id) {
-  const index = cart.findIndex(data => data.game.id === id);
-  if (index > -1) cart.splice(index, 1);
+  cart = cart.filter(item => item.game.id !== id);
   sauvegarder();
   AffichePanier();
 }
+
 
 
 
