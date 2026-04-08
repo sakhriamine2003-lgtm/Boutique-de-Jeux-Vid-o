@@ -94,7 +94,7 @@ for (let i = 0; i < cart.length; i++) {
         <a href="index.html" class="px-8 py-3 border border-white rounded">
           Continuer
         </a>
-        <button class="px-8 py-3 bg-orange-400 text-black rounded font-bold">
+        <button id="btn-payer" class="px-8 py-3 bg-orange-400 text-black rounded font-bold">
           Payer >
         </button>
       </div>
@@ -132,6 +132,26 @@ function SupprimerCard(id) {
 
 
 
+const btn =document.getElementById("btn-payer");
+function CommandeValidee(){
+
+  btn.addEventListener('click' ,()=> {
+
+    if(cart){ localStorage.remove();
+       alert('Commande validee ! Merci pour votre achat')}
+      else {return ; }
+    
+
+
+     }
+    ) }
+
+  
+
+
+
+
+window.CommandeValidee = CommandeValidee;
 window.quantitiePlus = quantitiePlus;
 window.quantitieMoins = quantitieMoins;
 window.SupprimerCard = SupprimerCard ;
