@@ -37,13 +37,20 @@ export function FiltrerCategory(games) {
       afficherGames(games)
     }
     else {
-      const result = [];
-      for (let i = 0; i < games.length; i++) {
-        if (games[i].category === categorie) {
-          result.push(games[i])
 
-        }
-      }
+      const result =games.filter(game => game.category === categorie)
+
+
+
+
+
+      // const result = [];
+      // for (let i = 0; i < games.length; i++) {
+      //   if (games[i].category === categorie) {
+      //     result.push(games[i])
+
+      //   }
+      // }
       afficherGames(result)
       
     }
